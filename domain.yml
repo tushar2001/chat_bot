@@ -1,0 +1,88 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - reserve
+  - seat_entry
+  - time
+  - thankyou
+  - ac
+  - non-ac
+  - open_time
+  - bot_challenge
+
+actions:
+  - reservations
+
+forms:
+  reservation_form:
+    seatcount:
+      - type: from_entity
+        entity: seatcount
+    section:
+      - type: from_entity
+        entity: section
+    time:
+      - type: from_entity
+        entity: time
+
+entities:
+  - seatcount
+  - section
+  - time
+
+# forms: 
+#   - Reserve_form:
+#     - seat_count:
+#       - type: from_text
+#     - section:
+#       - type: from_text
+#     - time:
+#       - type: from_text
+
+
+slots:
+  seatcount:
+      type: unfeaturized
+  section:
+      type: unfeaturized
+  time:
+      type: unfeaturized
+  
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How can I help you?"
+
+  utter_ask_seatcount:
+  - text: "How many seats would you like to reserve?"
+
+  utter_ask_section:
+  - text: "Which section would you like to book?"
+    buttons:
+    - title: "AC"
+      payload: '/ac{"section": "ac"}'
+    - title: "Non-AC" 
+      payload: '/non-ac{"section": "non-ac"}'
+
+  utter_ask_time:
+  - text:  "When would you like to book a reservation? (We are only open from 7pm to 10pm)"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot"
+
+  utter_opentime:
+  - text: "We are only open from 7pn to 10pm"
+  
+  utter_confirmed:
+  - text: "Congats! your booking is reserved"
+  - text: "You have successfully reserved a table"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

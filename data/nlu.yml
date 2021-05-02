@@ -1,0 +1,88 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good by
+    - cee you later
+    - good night
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: reserve
+  examples: |
+    - I want to reserve a table
+    - I want to reserve a table for a party of [4](seatcount)
+    - Can I get a table
+    - reserve a table
+    - can I reserve a table
+    - book a table
+    - I want to reserve a seat
+    - I want to reserve a seat for a party of [4](seatcount)
+    - Can I get a seat
+    - reserve a seat
+    - can I reserve a seat
+    - book a seat
+
+- intent: seat_entry
+  examples: |
+    - [2]{"entity":"seatcount","value":"2"}
+    - I would like to reserve [2] seats{"entity":"seatcount","value":"2"}
+    - [2] seats{"entity":"seatcount","value":"2"}
+
+- intent: time
+  examples: |
+    - In half an hour
+    - In one hour
+    - 7:30
+    - 7:00
+    - 8:00
+    - 8:30
+    - 9:00
+    - 9:30
+- intent: thankyou
+  examples: |
+    - thank you
+    - thanks
+    - okay thanks
+    - okay thankyou
+
+- intent: open_time
+  examples: |
+    - what time are you open between?
+    - what are your open and closing time?
+    - when does the restaurant opens?
+    - when does the restaurant closes?
+    - what is the opening and closing time?
+
+- intent: bot_challenge
+  examples: |
+    - are you a human?
+    - are you a bot?
+
+- intent: ac
+  examples: |
+    - AC
+
+- intent: non-ac
+  examples: |
+    - non-AC
